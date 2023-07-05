@@ -22,7 +22,7 @@ class ForcastWeatherItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(dayForcast?.main?.temp.toString() ?? '', style: Theme.of(context).textTheme.labelLarge,),
+            Text('${dayForcast?.main?.temp?.floor()}°', style: Theme.of(context).textTheme.labelLarge,),
             Icon(Icons.electric_bolt, size: 32.w,),
             Text(dayForcast?.dtTxt?.getTime() ?? '', style: Theme.of(context).textTheme.bodyMedium,),
           ],

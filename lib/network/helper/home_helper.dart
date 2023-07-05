@@ -15,11 +15,11 @@ class HomeHelper {
 
   factory HomeHelper() => _instance;
 
-  Future<AppResponse> getForcasts({required CoordModel coordinates}) async {
+  Future<AppResponse> getForcasts({required CoordModel coordinates, int? cnt}) async {
    Map<String, dynamic> params = {
     'lat' : coordinates.lat,
     'lon' : coordinates.lon,
-    'cnt' : 9,
+    'cnt' : cnt ?? 9,
     'units' : 'metric',
     'appid' : Constants().apiKey,
    };

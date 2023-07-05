@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/feature/view/widgets/loading_shimmer/shimmer.dart';
-import 'package:weather_app/feature/view/widgets/loading_shimmer/shimmer_loading.dart';
 import 'package:weather_app/utils/constants/constants.dart';
 import 'package:weather_app/utils/utils/utils.dart';
 
@@ -64,18 +62,13 @@ class AppImageNetwork extends StatelessWidget {
         height: height,
         fit: BoxFit.cover,
         placeholder: (context, String? url) {
-          return Shimmer(
-            child: ShimmerLoading(
-              isLoading: true,
-              child: Container(
+          return Container(
                 clipBehavior: clip,
                 decoration: BoxDecoration(
                   borderRadius: clip == Clip.none && shape == BoxShape.rectangle ? BorderRadius.circular(radius) : null,
                   shape: shape,
                 ),
-              ),
-            ),
-          );
+              );
         },
         maxWidthDiskCache: width?.toInt(),
         maxHeightDiskCache: height?.toInt(),

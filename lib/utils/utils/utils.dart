@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/feature/theme/color/color_manager.dart';
-import 'package:weather_app/feature/view/widgets/app_alert_dialog.dart';
 import 'package:weather_app/feature/view/widgets/app_snackbar.dart';
 import 'package:weather_app/feature/view/widgets/progress_dialog.dart';
 import 'package:weather_app/utils/constants/constants.dart';
@@ -50,16 +49,6 @@ class Utils {
     return const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
   }
 
-  void showAlertDialog(
-      {required String title,
-      required String body,
-      required String positiveButtonText,
-      required void Function() positiveButtonOnPressed,
-      String? negativeButtonText,
-      void Function()? negativeButtonOnPressed}) {
-    Get.dialog(
-      AppAlertDialog(title: title, body: body, positiveButtonText: positiveButtonText, negativeButtonText: negativeButtonText, positiveButtonOnPressed: positiveButtonOnPressed, negativeButtonOnPressed: negativeButtonOnPressed,));
-  }
 
   void changeDeviceOrientation({required DeviceOrientation orientation}) {
     SystemChrome.setPreferredOrientations([orientation]);
